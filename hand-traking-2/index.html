@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Frame // Subject Detection</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+  <div class="app">
+
+    <header class="topbar">
+      <div class="topbar__brand">
+        <span class="dot"></span>
+        <span>CYBER FRAME</span>
+      </div>
+      <div class="topbar__conf">
+        <span class="label">CONFIDENCE</span>
+        <span id="confidenceValue" class="value">--</span>
+      </div>
+    </header>
+
+    <main class="stage">
+      <div class="stage__inner" id="stageInner">
+        <video id="webcam" autoplay playsinline muted></video>
+        <canvas id="overlay"></canvas>
+
+        <div class="hud hud--topleft">CYBER FRAME // <span id="frameState">STANDBY</span></div>
+
+        <aside class="hud hud--panel">
+          <div class="hud__title">CAMERA NODE / 02</div>
+          <div class="hud__subject">SUBJECT DETECTION</div>
+          <div class="hud__divider"></div>
+          <div class="hud__row"><span>HANDS</span><span id="handCount">0/2</span></div>
+          <div class="hud__row"><span>FRAME</span><span id="frameStatus">INACTIVE</span></div>
+          <div class="hud__row"><span>MODE</span><span id="modeName">SCAN</span></div>
+        </aside>
+
+        <div class="hud hud--modehint" id="modeHint"></div>
+
+        <div class="hud hud--startbtn" id="startOverlay">
+          <button id="startBtn">AKTIFKAN KAMERA</button>
+          <p>Izinkan akses kamera untuk memulai deteksi tangan.</p>
+        </div>
+      </div>
+
+      <div class="statusbar">
+        <span class="statusbar__blip" id="statusBlip"></span>
+        <span id="statusText">MENUNGGU KAMERA...</span>
+      </div>
+
+      <p class="legend">
+        1 tangan, angkat <strong>1–4 jari</strong> &amp; tahan sebentar untuk ganti mode
+        (warna, bentuk, efek). Lalu bentuk sudut kotak dengan <strong>2 tangan</strong>
+        untuk membuka cyber frame.
+      </p>
+    </main>
+
+  </div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
